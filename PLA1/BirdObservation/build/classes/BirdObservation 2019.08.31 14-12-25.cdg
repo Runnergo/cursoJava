@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="BirdObservation">
+  <ClassDiagramComponents>
+    <Class name="Bird" package="" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nameBird" type="String" visibility="private"/>
+        <Field name="nameBirdLatin" type="String" visibility="private"/>
+        <Field name="observations" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nameBird"/>
+          <Argument type="String" name="nameBirdLatin"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNameBird" returnType="String" visibility="public"/>
+        <Method name="getNameBirdLatin" returnType="String" visibility="public"/>
+        <Method name="addObservation" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BirdDB" package="" visibility="public" xPosition="401.0" yPosition="20.0">
+      <Fields>
+        <Field name="birds" type="ArrayList&lt;Bird&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addBird" returnType="void" visibility="public">
+          <Argument type="String" name="nameBird"/>
+          <Argument type="String" name="nameBirdLatin"/>
+        </Method>
+        <Method name="addObservationBird" returnType="void" visibility="public">
+          <Argument type="String" name="nameBird"/>
+        </Method>
+        <Method name="isBird" returnType="void" visibility="public">
+          <Argument type="String" name="nameBird"/>
+          <Argument type="Scanner" name="reader"/>
+        </Method>
+        <Method name="printBird" returnType="void" visibility="public">
+          <Argument type="String" name="nameBird"/>
+        </Method>
+        <Method name="printListBirds" returnType="void" visibility="public"/>
+        <Method name="getBirds" returnType="ArrayList&lt;Bird&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="" visibility="public" xPosition="20.0" yPosition="526.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="" visibility="public" xPosition="400.0" yPosition="488.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="menu" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="ok" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="exit" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="ask" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="commentary"/>
+          <Argument type="Scanner" name="reader"/>
+        </Method>
+        <Method name="error" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Opciones" package="" visibility="public" xPosition="226.0" yPosition="507.0">
+      <Fields>
+        <Field name="reader" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="seleccion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Person" package="" visibility="public" xPosition="20.0" yPosition="262.0">
+      <Fields>
+        <Field name="namePerson" type="String" visibility="private"/>
+        <Field name="nameBird" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="namePerson"/>
+          <Argument type="String" name="nameBird"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNamePerson" returnType="String" visibility="public"/>
+        <Method name="setNamePerson" returnType="void" visibility="public">
+          <Argument type="String" name="namePerson"/>
+        </Method>
+        <Method name="getNameBird" returnType="String" visibility="public"/>
+        <Method name="setNameBird" returnType="void" visibility="public">
+          <Argument type="String" name="nameBird"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PersonDB" package="" visibility="public" xPosition="396.0" yPosition="281.0">
+      <Fields>
+        <Field name="person" type="ArrayList&lt;Person&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addPerson" returnType="void" visibility="public">
+          <Argument type="String" name="namePerson"/>
+          <Argument type="String" name="nameBird"/>
+        </Method>
+        <Method name="printPersons" returnType="void" visibility="public"/>
+        <Method name="printQueryBird" returnType="void" visibility="public">
+          <Argument type="String" name="nameBird"/>
+        </Method>
+        <Method name="printQueryOrnithologist" returnType="void" visibility="public">
+          <Argument type="String" name="namePerson"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="birds" source="BirdDB" target="Bird" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Bird&gt;"/>
+    <HasRelation name="person" source="PersonDB" target="Person" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Person&gt;"/>
+    <UseRelation source="BirdDB" target="Bird" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
