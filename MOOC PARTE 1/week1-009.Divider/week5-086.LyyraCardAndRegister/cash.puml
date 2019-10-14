@@ -1,0 +1,10 @@
+@startuml
+class CashRegister
+class LyyraCard
+class Main
+class Menu
+class MyDate
+class Person
+class java.util.Scanner
+Main ..> java.util.Scanner
+@enduml
