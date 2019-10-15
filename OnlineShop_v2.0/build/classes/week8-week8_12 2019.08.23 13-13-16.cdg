@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="week8-week8_12">
+  <ClassDiagramComponents>
+    <Class name="Main" package="" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Purchase" package="" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="product" type="String" visibility="private"/>
+        <Field name="amount" type="int" visibility="private"/>
+        <Field name="unitPrice" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="product"/>
+          <Argument type="int" name="amount"/>
+          <Argument type="int" name="unitPrice"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="price" returnType="int" visibility="public"/>
+        <Method name="increaseAmount" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Shop" package="" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="store" type="Storehouse" visibility="private"/>
+        <Field name="reader" type="Scanner" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Storehouse" name="store"/>
+          <Argument type="Scanner" name="reader"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="manage" returnType="void" visibility="public">
+          <Argument type="String" name="customer"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ShoppingBasket" package="" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="basket" type="Map&lt;String, Purchase&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="String" name="product"/>
+          <Argument type="int" name="price"/>
+        </Method>
+        <Method name="price" returnType="int" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Storehouse" package="" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="pricesProduct" type="Map&lt;String, Integer&gt;" visibility="private"/>
+        <Field name="stockProduct" type="Map&lt;String, Integer&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addProduct" returnType="void" visibility="public">
+          <Argument type="String" name="product"/>
+          <Argument type="int" name="price"/>
+          <Argument type="int" name="stock"/>
+        </Method>
+        <Method name="price" returnType="int" visibility="public">
+          <Argument type="String" name="product"/>
+        </Method>
+        <Method name="stock" returnType="int" visibility="public">
+          <Argument type="String" name="product"/>
+        </Method>
+        <Method name="take" returnType="boolean" visibility="public">
+          <Argument type="String" name="product"/>
+        </Method>
+        <Method name="products" returnType="Set&lt;String&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="store" source="Shop" target="Storehouse" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="basket" source="ShoppingBasket" target="Purchase" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Map&lt;String, Purchase&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

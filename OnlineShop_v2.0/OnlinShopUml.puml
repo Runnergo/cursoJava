@@ -1,0 +1,20 @@
+@startuml
+annotation java.lang.Override
+class Main
+class Purchase
+class Shop
+class ShoppingBasket
+class Storehouse
+class java.util.HashMap
+class java.util.Map
+class java.util.Scanner
+class java.util.Set
+Main ..> java.util.Scanner
+Purchase ..> java.lang.Override
+Shop ..> java.util.Scanner
+ShoppingBasket ..> java.util.HashMap
+ShoppingBasket ..> java.util.Map
+Storehouse ..> java.util.HashMap
+Storehouse ..> java.util.Map
+Storehouse ..> java.util.Set
+@enduml
