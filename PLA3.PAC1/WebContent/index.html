@@ -1,0 +1,68 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="ISO-8859-1">  
+<title>Insert title here</title>  
+</head> 
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style> 
+<body>  
+
+Nuevo Medicamento
+<form action="Save" method="post">  
+<table id="customers">  
+<tr><td>Name:</td><td><input type="text" name="name"/></td></tr>  
+<tr><td>Descripcion:</td><td><input type="text" name="descripcion"/></td></tr> 
+<tr><td>Categoria:</td><td>
+<select name="categoria">
+<option>via oral</option>
+<option>vía intramuscular</option>
+<option>vía intravenosa</option> 
+<option>vía subcutánea</option>   
+<option>vía inhalatoria</option>   
+<option>vía transdérmica</option>   
+<option>vía nasal</option> 
+<option>vía oftálmica</option>    
+<option>vía ótica</option> 
+<option>vía tópica</option> 
+<option>vía rectal</option>    
+<option>vía vaginal</option> 
+</select>           
+</td></tr>  
+<tr><td>Precio:</td><td><input type="number" step="any" name="precio"/></td></tr>  
+<tr><td>Cantidad:</td><td><input type="number" name="stockCantidad"/></td></tr> 
+<tr><td>Pedido:</td><td><input type="number" name="stockPorRegistrar"/></td></tr> 
+<tr><td>Estado:</td><td><input type="checkbox" name="activo" value="true"/></td></tr> 
+ 
+</td></tr>  
+<tr><td colspan="2"><input type="submit" value="Save"/></td></tr>  
+</table>  
+</form>  
+
+<br/>  
+<a href="View">view</a>  
+  
+</body>  
+</html>
