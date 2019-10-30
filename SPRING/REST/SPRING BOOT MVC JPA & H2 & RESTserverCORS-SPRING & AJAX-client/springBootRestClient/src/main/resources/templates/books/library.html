@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="/webjars/jquery/3.0.0/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+//alert("jquery is working ");
+//cors //https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS
+//get https://www.w3schools.com/jquery/jquery_ref_ajax.asp
+//console https://developer.mozilla.org/es/docs/Web/API/Console/log
+//get library and with it we do a for-each to console.log
+	
+      $.get("http://localhost:8080/webapi/books",function(library){
+		
+		console.log(library);
+		library.forEach(function(book) {
+			$("table").append(templateTable(book));
+		      })	
+	      })
+})
+
+//alert backtick js6 
+// backtick https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+function templateTable(book) {
+		var template =
+	`<tr>
+	     <td>${book.title}</td>
+	     <td>${book.isbn}</td>
+	     <td>${book.pages}</td>
+	</tr>`
+	return template;
+}
+
+
+
+</script>
+
+
+<style>
+table, form {margin:20px;}
+</style>
+</head>
+<table> </table>
+</html>
+
