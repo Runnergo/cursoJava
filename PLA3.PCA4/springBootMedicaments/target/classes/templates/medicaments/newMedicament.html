@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="/webjars/jquery/3.0.0/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+	<div>
+		<form action="insertMedicament">
+          <h5 align="center">ADD MEDICAMENTS</h5>
+			<label for="id">ID</label><input type="text" name="medicamentId" id="medicamentId" /> 
+		    <label for="name">Name</label><input type="text" name="name" id="name" />
+		    <label for="price">Price</label><input type="text" name="price" id="price" /> 
+		    <label for="description">Description</label><input	type="text" name="description" id="description" /> 
+		    <label for="category">Category</label>
+		    <select type="select" name="category" id="category" /> 
+		      <option value="calmante">calmante</option>
+		      <option value="antiinflamatorio">Antiinflamatorio</option>
+		      <option value="antihistaminicos">Antihistaminico</option>
+		      <option value="antibiotico">antibiotico</option>
+		      <option value="vitaminico">Vitaminico</option>
+		    </select>  
+		    <label for="producer">Producer</label><input type="text" name="producer" id="producer" /> 
+		    <label for="stockQuantity">StockQuantity</label><input type="text.parseLong" name="stockQuantity" id="stockQuantity" /> 
+		    <label for="stockInOrder">StockInOrder</label><input type="text" name="stockInOrder" id="stockInOrder" />
+		     
+		    <label for="active">Active</label><input type="checkbox" value="true"name="active" id="active" />
+
+			<div class="form-group">
+				<input type="submit" value="SEND" class="btn btn-primary btn-sm" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>

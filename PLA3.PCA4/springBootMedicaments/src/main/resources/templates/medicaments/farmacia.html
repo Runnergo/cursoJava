@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link rel="stylesheet"
+	href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/webjars/jquery/3.0.0/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+table, form {
+	margin: 20px;
+}
+</style>
+</head>
+
+
+
+<h5>Listado de Medicamentos</h5>
+<div class="form-group">
+
+	<table>	
+		<div align="center">		
+			<th>Id_Medicament </th>
+			<th>Name</th>
+			<th>Category </th>
+			<th>Price </th>
+			<th>Stock </th>
+			<th>Order </th>
+			<th>Active </th>
+			<th>Delete</th>
+			<th>Edit</th>
+
+		<tr th:each="medicament:${medicamentos}">
+			<td th:text="${medicament.medicamentId}"></td>
+			<td th:text="${medicament.name}"></td>
+			<td th:text="${medicament.category}"></td>
+			<td th:text="${medicament.price}"></td>
+			<td th:text="${medicament.stockQuantity}"></td>
+				<td th:text="${medicament.stockInOrder}"></td>
+			<td th:text="${medicament.active}"></td>
+			<td><a
+				th:href="@{deleteMedicament(medicamentId=${medicament.medicamentId})}"
+				class="btn btn-primary btn-sm">DELETE</a></td>
+				<td><a
+				th:href="@{updateMedicament(medicamentId=${medicament.medicamentId})}"
+				class="btn btn-primary btn-sm">Edit</a></td>
+		</tr>
+	</table>
+	<form action="newMedicament">
+
+		<input type="submit" style="width: 100%" value="NEW MEDICAMENT"
+			class="btn btn-primary btn-sm" />
+	</form>
+</div>
+</html>
