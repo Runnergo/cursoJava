@@ -36,6 +36,10 @@ Recopilacion de ejercicios  realizados durante el Curso  de programacion de java
 7. Ejercicos realizados en clase de Spring
    - Servlet
    - JPA
+   - MVC
+   - Spring Boot
+   - Rest
 
 8. PLA3 ejercicios tercera fase sobre JEE Spring
-   - PLA3.PC1 Framacia
+   - PLA3.PAC1 Famacia- basado en servlest
+   - PLA3.PAC4 Medicamentos- basado en Spring Boot
