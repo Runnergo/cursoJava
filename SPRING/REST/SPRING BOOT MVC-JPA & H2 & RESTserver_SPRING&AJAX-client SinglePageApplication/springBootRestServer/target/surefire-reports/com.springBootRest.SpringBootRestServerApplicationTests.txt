@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.springBootRest.SpringBootRestServerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.092 s <<< FAILURE! - in com.springBootRest.SpringBootRestServerApplicationTests
+initializationError(com.springBootRest.SpringBootRestServerApplicationTests)  Time elapsed: 0.01 s  <<< ERROR!
+java.lang.Exception: The class com.springBootRest.SpringBootRestServerApplicationTests is not public.
+
+initializationError(com.springBootRest.SpringBootRestServerApplicationTests)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Test class should have exactly one public constructor
+
+initializationError(com.springBootRest.SpringBootRestServerApplicationTests)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Method contextLoads() should be public
+

@@ -1,0 +1,5 @@
+com\springbootRest\BookRepository.class
+com\springbootRest\SpringBootRestServerApplication.class
+com\springbootRest\SpringBootServerAjax.class
+com\springbootRest\Book.class
+com\springbootRest\BookRestController.class
